@@ -1,0 +1,8 @@
+.body2 {
+    height: 100px;
+    backdrop-filter: opacity(10%);
+    background-image: url("https://lh3.googleusercontent.com/p/AF1QipPg2uF3IZjvAhYrPWrjRDKQf6hT35R2ZHmRGdne=s680-w680-h510");
+    background-size: cover;
+    background-repeat:no-repeat;
+    background-position: center center;
+  }
