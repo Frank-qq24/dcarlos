@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<?php include("modelo/conexion.php") // Al empezar se conecta con la base datos?>
+<?php include("modelo/conection.php") // Al empezar se conecta con la base datos?>
 <html lang="es">
     <head>
         <meta charset="utf-8" />
@@ -129,14 +129,77 @@
                                             <td><?php echo $row['fecha'] ?></td>
                                             <td><?php echo $row['hora'] ?></td>
                                             <td>
-                                                <a href="edit.php?id=<?php echo $row['idreserva'];?>" class="btn btn-outline-secondary">
+                                                <!-- Button trigger modal -->
+                                                <button type="button" class="btn btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
                                                     <i class="fa-solid fa-pencil"></i>
-                                                </a>
+                                                </button>
                                                 <a href="delete_task.php?id=<?php echo $row['idreserva'];?>" class="btn btn-outline-danger">
                                                     <i class="fa-solid fa-trash"></i>
                                                 </a>
                                             </td>
                                         </tr>
+                                        <!-- Modal -->
+                                        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                                        <div class="modal-dialog modal-dialog-centered">
+                                            <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h1 class="modal-title fs-5" id="staticBackdropLabel">Editar Reserva</h1>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body">
+                                            <form method="post" action="grabarReserva"class="needs-validation" novalidate="">
+                                            <div class="row g-3">
+                                                <div class="col-sm-5">
+                                                    <label for="firstName" class="form-label">Nombres</label>
+                                                    <input type="text" class="form-control" id="firstName" placeholder="" value="<?php echo $row['idreserva'];?>" required="">
+                                                </div>
+                                                
+                                                <div class="col-sm-7">
+                                                    <label for="lastName" class="form-label">Apellidos</label>
+                                                    <input type="text" class="form-control" id="lastName" placeholder="" value="" required="">
+                                                </div>
+                
+                                                <div class="col-sm-7">
+                                                    <label for="username" class="form-label">Correo Electronico</label>
+                                                    <div class="input-group has-validation">
+                                                        <span class="input-group-text">@</span>
+                                                        <input type="text" class="form-control" id="username" placeholder="Ejemplo@gilmail.com" required="">
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-5">
+                                                    <label for="lastName" class="form-label">Celular</label>
+                                                    <input type="number" class="form-control" id="celular" placeholder="" value="" required="">
+                                                </div>
+                                                
+                                                <div class="col-md-5">
+                                                    <label for="country" class="form-label">TIPO DE MESA</label>
+                                                    <select class="form-select" id="country" name="txtcantidad">
+                                                        <option>Seleccione ...</option>
+                                                        <option value="8">Familiar</option>
+                                                        <option value="4">Amigos</option>
+                                                        <option value="2">Pareja</option>
+                                                        <option value="1">Personal</option>
+                                                    </select>
+                                                </div>
+                
+                                                <div class="col-md-4">
+                                                <label for="state" class="form-label">FECHA</label>
+                                                <input type="date" class="form-control" value="" name="txtfecha">
+                                                </div>
+                
+                                                <div class="col-md-3">
+                                                <label for="zip" class="form-label">HORA</label>
+                                                <input type="time" class="form-control" name="txthora" placeholder="">
+                                                </div>
+                                            </div>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                                                <button type="button" class="btn btn-primary">Guardar</button>
+                                            </div>
+                                            </div>
+                                        </div>
+                                        </div>
                                         <?php }; ?>
                                     </tbody>
                                 </table>
@@ -163,10 +226,7 @@
                                 </div>
                         <div style="height: 10vh"></div>
                         <div class="card mb-4"><div class="card-body"> CAMBIAR ESTA WEVADA, the navigation stays at the top of the page. This is the end of the static navigation demo.</div></div>
-                        <!-- Button trigger modal -->
-                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                        Launch demo modal
-                        </button>
+                    
                     </div>
                 </main>
                 
@@ -191,21 +251,3 @@
         <script src="js/datatables-simple-demo.js"></script>
     </body>
 </html>
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        ...
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
-    </div>
-  </div>
-</div>
