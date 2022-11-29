@@ -7,18 +7,18 @@
         <meta name="description" content="" />
         <meta name="author" content="" />
         <title>Generar Comanda - DCarlos</title>
-        <link href="css/styles.css" rel="stylesheet" />
+        <link href="../css/styles.css" rel="stylesheet" />
         <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
     </head>
     <body class="sb-nav-fixed">
         <!--Header de web-->
-        <?php include("includes/header.php")?>
+        <?php include("../includes/header.php")?>
         
         <!---------------------------- CONTENIDO -------------------------------->
         <div id="layoutSidenav">
 
             <!--SIDEBAR-->
-            <?php include("includes/sidebar.php")?>
+            <?php include("../includes/sidebar.php")?>
 
             <!--Dentro de la pagina-->
             <div id="layoutSidenav_content">
@@ -107,6 +107,6 @@
             </div>
         </div>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
-        <script src="js/scripts.js"></script>
+        <script src="../js/scripts.js"></script>
     </body>
 </html>

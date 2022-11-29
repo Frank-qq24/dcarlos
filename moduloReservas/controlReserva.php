@@ -30,9 +30,10 @@
             echo json_encode($results);
 
             break;
-
-        case "guardaryeditar":
+        /*
+        case "guardar y editar":
             $datos=$producto->get_producto_x_id($_POST["prod_id"]);
+            
             if(empty($_POST["prod_id"])){
                 if(is_array($datos)==true and count($datos)==0){
                     $producto->insert_producto($_POST["prod_nom"]);
@@ -56,6 +57,6 @@
         case "eliminar":
             $producto->delete_producto($_POST["prod_id"]);
             break;
-
+        */
     }
 ?>

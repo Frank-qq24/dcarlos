@@ -1,6 +1,6 @@
 <!DOCTYPE html>
-<?php include("modelo/conection.php") // Al empezar se conecta con la base datos?>
 <html lang="es">
+
     <head>
         <meta charset="utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -9,18 +9,20 @@
         <meta name="author" content="" />
         <title>Reporte/Reservas</title>
         <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
-        <link href="css/styles.css" rel="stylesheet" />
+        <link href="../css/styles.css" rel="stylesheet" />
         <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
     </head>
+
     <body class="sb-nav-fixed">
+
         <!--Header de web-->
-        <?php include("includes/header.php")?>
+        <?php include("../includes/header.php")?>
         
-        <!--SIDEBAR-->
+        <!--ABAJO-->
         <div id="layoutSidenav">
 
             <!--SIDEBAR-->
-            <?php include("includes/sidebar.php")?>
+            <?php include("../includes/sidebar.php")?>
 
             <!--Dentro de la pagina-->
             <div id="layoutSidenav_content">
@@ -115,92 +117,15 @@
                                         </tr>
                                     </tfoot>
                                     <tbody>
-                                        <?php
-                                            $query = "select * from reserva";
-                                            $resultado_reservas = mysqli_query($conn, $query);
-                                            //mysqli_fetch_array : guarda el numero de filas recorridas
-                                            while($row = mysqli_fetch_array($resultado_reservas)){ 
-                                        ?>
                                         <tr>
-                                            <td><?php echo $row['idreserva'] ?></td>
-                                            <td><?php echo $row['idcliente'] ?></td>
-                                            <td><?php echo $row['npersonas'] ?></td>
-                                            <td><?php echo $row['idcliente'] ?></td>
-                                            <td><?php echo $row['fecha'] ?></td>
-                                            <td><?php echo $row['hora'] ?></td>
-                                            <td>
-                                                <!-- Button trigger modal -->
-                                                <button type="button" class="btn btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-                                                    <i class="fa-solid fa-pencil"></i>
-                                                </button>
-                                                <a href="delete_task.php?id=<?php echo $row['idreserva'];?>" class="btn btn-outline-danger">
-                                                    <i class="fa-solid fa-trash"></i>
-                                                </a>
-                                            </td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
                                         </tr>
-                                        <!-- Modal -->
-                                        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                                        <div class="modal-dialog modal-dialog-centered">
-                                            <div class="modal-content">
-                                            <div class="modal-header">
-                                                <h1 class="modal-title fs-5" id="staticBackdropLabel">Editar Reserva</h1>
-                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                            </div>
-                                            <div class="modal-body">
-                                            <form method="post" action="grabarReserva"class="needs-validation" novalidate="">
-                                            <div class="row g-3">
-                                                <div class="col-sm-5">
-                                                    <label for="firstName" class="form-label">Nombres</label>
-                                                    <input type="text" class="form-control" id="firstName" placeholder="" value="<?php echo $row['idreserva'];?>" required="">
-                                                </div>
-                                                
-                                                <div class="col-sm-7">
-                                                    <label for="lastName" class="form-label">Apellidos</label>
-                                                    <input type="text" class="form-control" id="lastName" placeholder="" value="" required="">
-                                                </div>
-                
-                                                <div class="col-sm-7">
-                                                    <label for="username" class="form-label">Correo Electronico</label>
-                                                    <div class="input-group has-validation">
-                                                        <span class="input-group-text">@</span>
-                                                        <input type="text" class="form-control" id="username" placeholder="Ejemplo@gilmail.com" required="">
-                                                    </div>
-                                                </div>
-                                                <div class="col-sm-5">
-                                                    <label for="lastName" class="form-label">Celular</label>
-                                                    <input type="number" class="form-control" id="celular" placeholder="" value="" required="">
-                                                </div>
-                                                
-                                                <div class="col-md-5">
-                                                    <label for="country" class="form-label">TIPO DE MESA</label>
-                                                    <select class="form-select" id="country" name="txtcantidad">
-                                                        <option>Seleccione ...</option>
-                                                        <option value="8">Familiar</option>
-                                                        <option value="4">Amigos</option>
-                                                        <option value="2">Pareja</option>
-                                                        <option value="1">Personal</option>
-                                                    </select>
-                                                </div>
-                
-                                                <div class="col-md-4">
-                                                <label for="state" class="form-label">FECHA</label>
-                                                <input type="date" class="form-control" value="" name="txtfecha">
-                                                </div>
-                
-                                                <div class="col-md-3">
-                                                <label for="zip" class="form-label">HORA</label>
-                                                <input type="time" class="form-control" name="txthora" placeholder="">
-                                                </div>
-                                            </div>
-                                            </div>
-                                            <div class="modal-footer">
-                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-                                                <button type="button" class="btn btn-primary">Guardar</button>
-                                            </div>
-                                            </div>
-                                        </div>
-                                        </div>
-                                        <?php }; ?>
+
                                     </tbody>
                                 </table>
                             </div>
@@ -245,9 +170,12 @@
                 </footer>
             </div>
         </div>
+
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
-        <script src="js/scripts.js"></script>
+        <script src="../js/scripts.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" crossorigin="anonymous"></script>
-        <script src="js/datatables-simple-demo.js"></script>
+        <script src="../js/datatables-simple-demo.js"></script>
     </body>
+
 </html>
+

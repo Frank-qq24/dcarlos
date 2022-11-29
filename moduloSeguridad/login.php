@@ -12,12 +12,12 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>Login - Dcarlos</title>
-        <link href="css/styles.css" rel="stylesheet" />
-        <link href="css/styles2.css" rel="stylesheet" />
+        <title>Login</title>
+        <link href="./css/styles.css" rel="stylesheet" />
+        <link href="./css/styles2.css" rel="stylesheet" />
         <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
     </head>
-    <body class="body2 ">
+    <body class="body2">
         <div id="layoutAuthentication">
             <div id="layoutAuthentication_content">
                 <main>
@@ -42,7 +42,7 @@
                                             </div>
                                             <div class="d-flex align-items-center justify-content-between mt-4 mb-0">
                                                 <a class="small" href="password.php">Olvidaste tu contraseña?</a>
-                                                <a class="btn btn-primary" href="index.php">Login</a>
+                                                <a class="btn btn-primary" href="shared/home.php">Login</a>
                                             </div>
                                         </form>
                                     </div>
@@ -71,7 +71,7 @@
             </div>
         </div>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
-        <script src="js/scripts.js"></script>
+        <script src="../js/scripts.js"></script>
     </body>
 </html>
 <?php	

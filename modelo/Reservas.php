@@ -1,5 +1,6 @@
 <?php 
     class Reservas extends conectar{
+
         public function get_reserva(){
             $conectar = parent::conexion();
             parent::set_name();
@@ -8,6 +9,7 @@
             $sql->execute();
             return $resultado = $sql->fetchAll();
         }
+
         public function get_reserva_x_id($reserva_id){
             $conectar = parent::conexion();
             parent::set_name();
@@ -17,6 +19,7 @@
             $sql->execute();
             return $resultado = $sql->fetchAll();
         }
+        
         public function delete_reserva($reserva_id){
             $conectar = parent::conexion();
             parent::set_name();

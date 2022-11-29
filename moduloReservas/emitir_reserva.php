@@ -7,18 +7,18 @@
         <meta name="description" content="" />
         <meta name="author" content="" />
         <title>Emetir Reserva - DCarlos</title>
-        <link href="css/styles.css" rel="stylesheet" />
+        <link href="../css/styles.css" rel="stylesheet" />
         <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
     </head>
     <body class="sb-nav-fixed">
         <!--Header de web-->
-        <?php include("includes/header.php")?>
+        <?php include("../includes/header.php")?>
         
         <!--CONTENIDO-->
         <div id="layoutSidenav">
 
             <!--SIDEBAR-->
-            <?php include("includes/sidebar.php")?>
+            <?php include("../includes/sidebar.php")?>
 
             <!--Dentro de la pagina-->
             <div id="layoutSidenav_content">
@@ -27,17 +27,10 @@
                     <div class="container-fluid px-4">
                         <h1 class="mt-4">Emitir Reserva</h1>
                         <ol class="breadcrumb mb-4">
-                            <li class="breadcrumb-item"><a href="index.php">Principal</a></li>
+                            <li class="breadcrumb-item"><a href="../shared/home.php">Principal</a></li>
                             <li class="breadcrumb-item active">Emitir Boleta</li>
                         </ol>
-                        <div class="card mb-2">
-                            <div class="card-body">
-                                <div class="text-center">
-                                    <h2>Reserva de Mesa</h2>
-                                    <p class="lead">Una buena atencion al cliente, al cual lo esperamos con anticipacion</p>
-                                </div>
-                            </div>
-                        </div>
+                        <hr>
 
                         
                         <!-- Lateral -->
@@ -178,6 +171,6 @@
             </div>
         </div>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
-        <script src="js/scripts.js"></script>
+        <script src="../js/scripts.js"></script>
     </body>
 </html>
